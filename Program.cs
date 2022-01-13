@@ -9,18 +9,20 @@ namespace DAEntity
         {
             var ctx = new AppDbContext();
 
-            // var query = ctx.Posts.Include(x => x.Author).ToList();
-            var authors = ctx.Authors.ToList();
+            var query = ctx.Posts.Include(x => x.Tags).First();
+            // var authors = ctx.Authors.ToList();
+            var tag = ctx.Tags.First();
+            query.Tags.Add(tag);
 
+            // var newTag = new Tag()
+            // {
+            //     Name = "Wakanda 4 ever"
+            // };
+            // ctx.Tags.Add(newTag);
 
+            ctx.SaveChanges();
 
-
-
-
-
-
-
-
+            // var blogPostTags = 
 
             // var newAuthor = new Author()
             // {

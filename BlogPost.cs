@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace DAEntity
@@ -12,6 +13,8 @@ namespace DAEntity
         public DateTime PublishedUtc { get; set; }
 
         public Author Author { get; set; }
+
+        public ICollection<Tag> Tags { get; set; }
 
         public override string ToString()
         {
