@@ -8,6 +8,7 @@ namespace DAEntity
         static void Main(string[] args)
         {
             var ctx = new AppDbContext();
+            var temp = ctx.Lineas.First();
 
             var query = ctx.Posts.Include(x => x.Tags).First();
             // var authors = ctx.Authors.ToList();

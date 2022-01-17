@@ -22,4 +22,28 @@ namespace DAEntity
         }
     }
 
+    public class MetricaLinea
+    {
+        public int MetricaId { get; set; }
+        public Metrica Metrica { get; set; }
+        public int LineaId { get; set; }
+        public Linea Linea { get; set; }
+        public string Meta { get; set; }
+    }
+
+    public class Linea
+    {
+        public int Id { get; set; }
+        public string Description { get; set; }
+        public ICollection<Metrica> Metricas { get; set; }
+        public List<MetricaLinea> MetricaLineas { get; set; }
+    }
+
+    public class Metrica
+    {
+        public int Id { get; set; }
+        public string Description { get; set; }
+        public ICollection<Linea> Lineas { get; set; }
+        public List<MetricaLinea> MetricaLineas { get; set; }
+    }
 }
